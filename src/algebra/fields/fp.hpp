@@ -111,8 +111,8 @@ public:
     template<mp_size_t m>
     Fp_model operator^(const bigint<m> &pow) const;
 
-    static size_t size_in_bits() { return num_bits; }
-    static size_t capacity() { return num_bits - 1; }
+    static uint64_t size_in_bits() { return num_bits; }
+    static uint64_t capacity() { return num_bits - 1; }
     static bigint<n> field_char() { return modulus; }
 
     static Fp_model<n, modulus> zero();
@@ -141,13 +141,13 @@ int64_t Fp_model<n, modulus>::inv_cnt = 0;
 #endif
 
 template<mp_size_t n, const bigint<n>& modulus>
-size_t Fp_model<n, modulus>::num_bits;
+uint64_t Fp_model<n, modulus>::num_bits;
 
 template<mp_size_t n, const bigint<n>& modulus>
 bigint<n> Fp_model<n, modulus>::euler;
 
 template<mp_size_t n, const bigint<n>& modulus>
-size_t Fp_model<n, modulus>::s;
+uint64_t Fp_model<n, modulus>::s;
 
 template<mp_size_t n, const bigint<n>& modulus>
 bigint<n> Fp_model<n, modulus>::t;
